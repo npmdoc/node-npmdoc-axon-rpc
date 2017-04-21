@@ -1,0 +1,538 @@
+<html><head></head><body><div class="apidocDiv">
+<style>
+/*csslint
+*/
+.apidocDiv {
+    background: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.apidocDiv a[href] {
+    color: #33f;
+    font-weight: bold;
+    text-decoration: none;
+}
+.apidocDiv a[href]:hover {
+    text-decoration: underline;
+}
+.apidocCodeCommentSpan {
+    background: #bbf;
+    color: #000;
+    display: block;
+}
+.apidocCodeKeywordSpan {
+    color: #d00;
+    font-weight: bold;
+}
+.apidocCodePre {
+    background: #eef;
+    border: 1px solid;
+    color: #777;
+    padding: 5px;
+    white-space: pre-wrap;
+}
+.apidocFooterDiv {
+    margin-top: 20px;
+    text-align: center;
+}
+.apidocModuleLi {
+    margin-top: 10px;
+}
+.apidocSectionDiv {
+    border-top: 1px solid;
+    margin-top: 20px;
+}
+.apidocSignatureSpan {
+    color: #777;
+    font-weight: bold;
+}
+</style>
+<h1>api documentation for
+    <a>axon-rpc (v0.0.3)</a>
+</h1>
+<h4>Remote procedure calls built on top of axon.</h4>
+<div class="apidocSectionDiv"><a href="#apidoc.tableOfContents" id="apidoc.tableOfContents"><h1>table of contents</h1></a><ol>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.axon-rpc">module axon-rpc</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.axon-rpc.Client">
+            function <span class="apidocSignatureSpan">axon-rpc.</span>Client
+            <span class="apidocSignatureSpan">(sock)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.axon-rpc.Server">
+            function <span class="apidocSignatureSpan">axon-rpc.</span>Server
+            <span class="apidocSignatureSpan">(sock)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">axon-rpc.</span>Client.prototype</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">axon-rpc.</span>Server.prototype</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.axon-rpc.Client">module axon-rpc.Client</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.axon-rpc.Client.Client">
+            function <span class="apidocSignatureSpan">axon-rpc.</span>Client
+            <span class="apidocSignatureSpan">(sock)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.axon-rpc.Client.prototype">module axon-rpc.Client.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.axon-rpc.Client.prototype.call">
+            function <span class="apidocSignatureSpan">axon-rpc.Client.prototype.</span>call
+            <span class="apidocSignatureSpan">(name)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.axon-rpc.Client.prototype.methods">
+            function <span class="apidocSignatureSpan">axon-rpc.Client.prototype.</span>methods
+            <span class="apidocSignatureSpan">(fn)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.axon-rpc.Server">module axon-rpc.Server</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.axon-rpc.Server.Server">
+            function <span class="apidocSignatureSpan">axon-rpc.</span>Server
+            <span class="apidocSignatureSpan">(sock)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.axon-rpc.Server.prototype">module axon-rpc.Server.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.axon-rpc.Server.prototype.expose">
+            function <span class="apidocSignatureSpan">axon-rpc.Server.prototype.</span>expose
+            <span class="apidocSignatureSpan">(name, fn)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.axon-rpc.Server.prototype.methodDescriptions">
+            function <span class="apidocSignatureSpan">axon-rpc.Server.prototype.</span>methodDescriptions
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.axon-rpc.Server.prototype.onmessage">
+            function <span class="apidocSignatureSpan">axon-rpc.Server.prototype.</span>onmessage
+            <span class="apidocSignatureSpan">(msg, reply)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.axon-rpc.Server.prototype.respondWithMethods">
+            function <span class="apidocSignatureSpan">axon-rpc.Server.prototype.</span>respondWithMethods
+            <span class="apidocSignatureSpan">(reply)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+</ol></div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.axon-rpc" id="apidoc.module.axon-rpc">module axon-rpc</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.axon-rpc.Client" id="apidoc.element.axon-rpc.Client">
+        function <span class="apidocSignatureSpan">axon-rpc.</span>Client
+        <span class="apidocSignatureSpan">(sock)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Client(sock) {
+  if (typeof sock.format === 'function') sock.format('json');
+  this.sock = sock;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+## Client
+
+```js
+var rpc = require('axon-rpc')
+, axon = require('axon')
+, req = axon.socket('req');
+
+var client = new rpc.<span class="apidocCodeKeywordSpan">Client</span>(req);
+req.connect(4000);
+```
+
+### Client#call(name, ..., fn)
+
+Invoke method `name` with some arguments and invoke `fn(err, ...)`:
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.axon-rpc.Server" id="apidoc.element.axon-rpc.Server">
+        function <span class="apidocSignatureSpan">axon-rpc.</span>Server
+        <span class="apidocSignatureSpan">(sock)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Server(sock) {
+  if (typeof sock.format === 'function') sock.format('json');
+  this.sock = sock;
+  this.methods = {};
+  this.sock.on('message', this.onmessage.bind(this));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+## Server
+
+```js
+var rpc = require('axon-rpc')
+, axon = require('axon')
+, rep = axon.socket('rep');
+
+var server = new rpc.<span class="apidocCodeKeywordSpan">Server</span>(rep);
+rep.bind(4000);
+```
+
+### Server#expose(name, fn)
+
+Expose a single method `name` mapped to `fn` callback.
+...</pre></li>
+    </ul>
+
+
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.axon-rpc.Client" id="apidoc.module.axon-rpc.Client">module axon-rpc.Client</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.axon-rpc.Client.Client" id="apidoc.element.axon-rpc.Client.Client">
+        function <span class="apidocSignatureSpan">axon-rpc.</span>Client
+        <span class="apidocSignatureSpan">(sock)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Client(sock) {
+  if (typeof sock.format === 'function') sock.format('json');
+  this.sock = sock;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+## Client
+
+```js
+var rpc = require('axon-rpc')
+, axon = require('axon')
+, req = axon.socket('req');
+
+var client = new rpc.<span class="apidocCodeKeywordSpan">Client</span>(req);
+req.connect(4000);
+```
+
+### Client#call(name, ..., fn)
+
+Invoke method `name` with some arguments and invoke `fn(err, ...)`:
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.axon-rpc.Client.prototype" id="apidoc.module.axon-rpc.Client.prototype">module axon-rpc.Client.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.axon-rpc.Client.prototype.call" id="apidoc.element.axon-rpc.Client.prototype.call">
+        function <span class="apidocSignatureSpan">axon-rpc.Client.prototype.</span>call
+        <span class="apidocSignatureSpan">(name)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">call = function (name){
+  var args = [].slice.call(arguments, 1, -1);
+  var fn = arguments[arguments.length - 1];
+
+  this.sock.send({
+    type: 'call',
+    method: name,
+    args: args
+  }, function(msg){
+    if ('error' in msg) {
+      var err = new Error(msg.error);
+      err.stack = msg.stack || err.stack;
+      fn(err);
+    } else {
+      msg.args.unshift(null);
+      fn.apply(null, msg.args);
+    }
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+```
+
+### Client#call(name, ..., fn)
+
+  Invoke method `name` with some arguments and invoke `fn(err, ...)`:
+
+```js
+client.<span class="apidocCodeKeywordSpan">call</span>('add', 1, 2, function(err, n){
+  console.log(n);
+  // =&gt; 3
+})
+```
+
+### Client#methods(fn)
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.axon-rpc.Client.prototype.methods" id="apidoc.element.axon-rpc.Client.prototype.methods">
+        function <span class="apidocSignatureSpan">axon-rpc.Client.prototype.</span>methods
+        <span class="apidocSignatureSpan">(fn)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">methods = function (fn){
+  this.sock.send({
+    type: 'methods'
+  }, function(msg){
+    fn(null, msg.methods);
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+```
+
+### Client#methods(fn)
+
+  Request available methods:
+
+```js
+client.<span class="apidocCodeKeywordSpan">methods</span>(function(err, methods){
+  console.log(methods);
+})
+```
+
+  Responds with objects such as:
+
+```js
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.axon-rpc.Server" id="apidoc.module.axon-rpc.Server">module axon-rpc.Server</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.axon-rpc.Server.Server" id="apidoc.element.axon-rpc.Server.Server">
+        function <span class="apidocSignatureSpan">axon-rpc.</span>Server
+        <span class="apidocSignatureSpan">(sock)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Server(sock) {
+  if (typeof sock.format === 'function') sock.format('json');
+  this.sock = sock;
+  this.methods = {};
+  this.sock.on('message', this.onmessage.bind(this));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+## Server
+
+```js
+var rpc = require('axon-rpc')
+, axon = require('axon')
+, rep = axon.socket('rep');
+
+var server = new rpc.<span class="apidocCodeKeywordSpan">Server</span>(rep);
+rep.bind(4000);
+```
+
+### Server#expose(name, fn)
+
+Expose a single method `name` mapped to `fn` callback.
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.axon-rpc.Server.prototype" id="apidoc.module.axon-rpc.Server.prototype">module axon-rpc.Server.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.axon-rpc.Server.prototype.expose" id="apidoc.element.axon-rpc.Server.prototype.expose">
+        function <span class="apidocSignatureSpan">axon-rpc.Server.prototype.</span>expose
+        <span class="apidocSignatureSpan">(name, fn)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">expose = function (name, fn){
+  if (1 == arguments.length) {
+    for (var key in name) {
+      this.expose(key, name[key]);
+    }
+  } else {
+    debug('expose "%s"', name);
+    this.methods[name] = fn;
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+```
+
+### Server#expose(name, fn)
+
+Expose a single method `name` mapped to `fn` callback.
+
+```js
+server.<span class="apidocCodeKeywordSpan">expose</span>('add', function(a, b, fn){
+fn(null, a + b);
+});
+```
+
+### Server#expose(object)
+
+Expose several methods:
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.axon-rpc.Server.prototype.methodDescriptions" id="apidoc.element.axon-rpc.Server.prototype.methodDescriptions">
+        function <span class="apidocSignatureSpan">axon-rpc.Server.prototype.</span>methodDescriptions
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">methodDescriptions = function (){
+  var obj = {};
+  var fn;
+
+  for (var name in this.methods) {
+    fn = this.methods[name];
+    obj[name] = {
+      name: name,
+      params: params(fn)
+    };
+  }
+
+  return obj;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.axon-rpc.Server.prototype.onmessage" id="apidoc.element.axon-rpc.Server.prototype.onmessage">
+        function <span class="apidocSignatureSpan">axon-rpc.Server.prototype.</span>onmessage
+        <span class="apidocSignatureSpan">(msg, reply)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">onmessage = function (msg, reply){
+  if ('methods' == msg.type) return this.respondWithMethods(reply);
+
+  // .method
+  var meth = msg.method;
+  if (!meth) return reply({ error: '.method required' });
+
+  // ensure .method is exposed
+  var fn = this.methods[meth];
+  if (!fn) return reply({ error: 'method "' + meth + '" does not exist' });
+
+  // .args
+  var args = msg.args;
+  if (!args) return reply({ error: '.args required' });
+
+  // invoke
+  args.push(function(err){
+    if (err) return reply({ error: err.message, stack: err.stack });
+    var args = [].slice.call(arguments, 1);
+    reply({ args: args });
+  });
+
+  fn.apply(null, args);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.axon-rpc.Server.prototype.respondWithMethods" id="apidoc.element.axon-rpc.Server.prototype.respondWithMethods">
+        function <span class="apidocSignatureSpan">axon-rpc.Server.prototype.</span>respondWithMethods
+        <span class="apidocSignatureSpan">(reply)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">respondWithMethods = function (reply){
+  reply({ methods: this.methodDescriptions() });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocFooterDiv">
+    [ this document was created with
+    <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a>
+    ]
+</div>
+</div>
+</body></html>
